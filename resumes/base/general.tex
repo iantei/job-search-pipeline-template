@@ -1,0 +1,82 @@
+% Base resume template. The pipeline reuses this preamble and macros when it
+% drafts a tailored resume, so keep the structure and swap the content.
+%
+% Compile:  tectonic resumes/base/general.tex
+%
+% NOTE ON FONTS: this preamble loads `helvet` and sets \sfdefault, but on some
+% TeX installations that silently does not take effect and the PDF renders in
+% Latin Modern Roman instead. It looks fine either way — just be aware the
+% output may not be the sans-serif you expect. If you want guaranteed bold and
+% a predictable font, add \usepackage[T1]{fontenc} and \usepackage{lmodern}.
+
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage[margin=0.5in,top=0.25in,bottom=0.25in]{geometry}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+\definecolor{accent}{HTML}{1F3864}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+\titleformat{\section}{\large\bfseries\color{accent}}{}{0em}{}[\vspace{-6pt}\rule{\textwidth}{0.8pt}]
+\titlespacing{\section}{0pt}{3pt}{1pt}
+
+\newcommand{\entry}[4]{\vspace{2pt}%
+  \textbf{#1} \hfill {\small #2}\\
+  {\small\itshape #3} \hfill {\small\itshape #4}\vspace{0pt}}
+\newcommand{\entrytwo}[2]{\vspace{2pt}\textbf{#1} \hfill {\small #2}\vspace{1pt}}
+
+\setlist[itemize]{leftmargin=1.2em, itemsep=0pt, parsep=0pt, topsep=0pt, label=\textbullet}
+
+\begin{document}
+
+% ---------- HEADER ----------
+\begin{center}
+  {\LARGE\bfseries\color{accent} Your Name}\\[2pt]
+  {\small City, State \,\textbar\, (000) 000-0000 \,\textbar\, \href{mailto:you@example.com}{you@example.com} \,\textbar\, \href{https://linkedin.com/in/you}{linkedin.com/in/you} \,\textbar\, \href{https://github.com/you}{github.com/you}}
+\end{center}
+\vspace{-8pt}
+
+\section{Summary}
+{\small Two or three sentences. Lead with years of experience and the domains
+you've shipped in, then the thing that differentiates you. Tailor this per
+posting --- it's the highest-leverage paragraph on the page.}
+
+\section{Experience}
+\entry{Job Title}{Mon YYYY -- Present}{Company}{Location}
+\begin{itemize}\small
+  \item \textbf{Lead with the outcome}, then the mechanism. Attach a number wherever one exists --- runtime cut, users served, incidents resolved, coverage gained.
+  \item Name the tradeoff or constraint. That's what makes a bullet survive an interviewer asking ``why did you do it that way?''
+\end{itemize}
+
+\entry{Previous Job Title}{Mon YYYY -- Mon YYYY}{Company}{Location}
+\begin{itemize}\small
+  \item ...
+\end{itemize}
+
+\section{Projects \& Open Source}
+\begin{itemize}\small
+  \item \textbf{Project Name} (\href{https://github.com/you/project}{github.com/you/project}) --- what it does, the stack, and the hard part.
+\end{itemize}
+
+\section{Education}
+\entrytwo{Degree --- Institution, Location}{Mon YYYY}\\[2pt]
+\entrytwo{Earlier Degree --- Institution, Location}{Mon YYYY}
+
+\section{Technical Skills}
+{\small
+\renewcommand{\arraystretch}{0.95}
+\begin{tabularx}{\textwidth}{@{}l X@{}}
+\textbf{Languages:} & \\
+\textbf{Data \& Systems:} & \\
+\textbf{Cloud \& DevOps:} & \\
+\textbf{Practices:} & \\
+\end{tabularx}}
+
+\end{document}

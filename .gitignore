@@ -1,0 +1,8 @@
+*.aux
+*.log
+*.out
+.DS_Store
+node_modules/
+
+# generated dashboard build artifact (regenerate with dashboard/build.py)
+dashboard/index.html
