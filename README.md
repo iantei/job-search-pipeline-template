@@ -85,12 +85,10 @@ It's gitignored — delete it any time and rebuild.
 - **Board** — Kanban across seven stages, drag-and-drop
 - **Catalog** — every posting shelved by cluster, with fit badges and a
   click-through to its tailored resume
-- **Interview Prep** — a problem tracker with per-item checkboxes and notes,
-  round-timing reference, and a STAR story builder
 
-Your stage tracking and prep notes live in the browser's localStorage, keyed
-separately from the generated data — so rebuilding never wipes your progress.
-Use Export/Import to move stage tracking between machines.
+Your stage tracking lives in the browser's localStorage, keyed separately from
+the generated data — so rebuilding never wipes your progress. Use
+Export/Import to move it between machines.
 
 ## Review before you send
 
@@ -104,8 +102,6 @@ The agent will not submit applications on your behalf.
 
 ## Known gaps
 
-- Export/Import covers stage tracking only, not the interview-prep checkboxes
-  and notes.
 - The dashboard is a local file. Viewing it on a phone needs a LAN server
   (`python3 -m http.server`), a tunnel, or a host with real auth in front —
   don't put it on public GitHub Pages, which has no access control outside
